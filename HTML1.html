@@ -4,21 +4,40 @@
 <head>
   <title>WEB1 - Welcome</title>
   <meta charset="utf-8">
-</head>
-<body>
-  <h1><a href="index.html">WEB</a></h1>
-  <input type="button" value="night" onclick="
-  var target=document.querySelector('body');
-   if (this.value==='night'){
+  <script>
+    function night_dayhandler(self){
+    var target=document.querySelector('body');
+   if (self.value==='night'){
     target.style.color='white';
     target.style.backgroundColor='black';
-    this.value='day';
+    self.value='day';
+
+     var color = document.querySelectorAll('a');
+     var i =0;
+     while(i<color.length){
+        color[i].style.color = 'powderblue';
+        i = i+1;
+     }
    }
    else {
     target.style.color='black';
     target.style.backgroundColor='white';
-    this.value='night';
+    self.value='night';
+
+    var color = document.querySelectorAll('a');
+     var i =0;
+     while(i<color.length){
+        color[i].style.color = 'blue';
+        i = i+1;
    }
+}
+    }
+  </script>
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input type="button" value="night" onclick="
+  night_dayhandler(this)
   ">
   <ol>
     <li><a href="1.html">HTML</a></li>
